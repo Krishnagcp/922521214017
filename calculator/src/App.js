@@ -8,13 +8,13 @@ function AverageCalculator() {
 
   const fetchNumbers = async (numberId) => {
     try {
-      const response = await axios.get(`http://localhost:9876/numbers/${numberId}`);
+      const response = await axios.get(`http://localhost:3001/numbers/${numberId}`);
       const data = response.data;
       setNumbers(data.windowCurrState);
       setAvg(data.avg);
       setError(null);
     } catch (error) {
-      setError('Error');
+      setError('Error fetching numbers');
       console.error('Error:', error);
     }
   };
